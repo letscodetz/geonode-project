@@ -1,3 +1,10 @@
+
+body{
+    overflow-x: hidden;
+}
+.home .navbar-inverse {
+    background-color: #04a2db;
+}
 .navbar-brand {
     background: url(../img/Web_RA-logo.png);
     background-repeat: no-repeat;
@@ -6,4 +13,20 @@
     text-indent: -9999px;
     height: 60px;
     width: 160px;
+}
+
+.navbar-nav .search input {
+    border: 1px solid #04a2db;
+}
+
+.home .jumbotron{
+    position: relative;
+    background: url(../img/MikocheniDrainage-1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    text-shadow: none;
+    height: 500px;
+
 }
