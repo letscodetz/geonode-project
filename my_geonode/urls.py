@@ -25,7 +25,7 @@ from geonode.urls import urlpatterns
 
 urlpatterns += [
 ## include your urls here
-
+url(r'^polls/', include('polls.urls')),
 ]
 
 urlpatterns = [
