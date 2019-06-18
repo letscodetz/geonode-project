@@ -30,3 +30,6 @@ body{
     height: 500px;
 
 }
+.home .jumbotron p {
+    font-weight: bold;
+}
