@@ -1,0 +1,89 @@
+{% load i18n avatar_tags %}
+
+ <!-- Navbar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <i class="fa fa-navicon fa-lg"></i>
+        </button>
+        <a class="navbar-brand" href="{% url "home" %}">GeoNode</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav toolbar">
+
+          {% block tabs %}
+
+          <li id="nav_layers">
+              <a href="{% url "layer_browse" %}?limit={{ CLIENT_RESULTS_LIMIT }}">{% trans "Layers" %}</a>
+          </li>
+          <li id="nav_maps">
+              {% if user.is_authenticated %}
+              <a href="#" class="dropdown-toggle">{% trans "Maps" %}<i class="fa fa-angle-down fa-lg"></i></a>
+              {% else %}
+              <a href="{% url "maps_browse" %}?limit={{ CLIENT_RESULTS_LIMIT }}">{% trans "Maps" %}</a>
+              {% endif %}
+          </li>
+
+          <li id="nav_documents"><a href="{% url "document_browse" %}?limit={{ CLIENT_RESULTS_LIMIT }}">{% trans "Documents" %}</a>
+          </li>
+              <li id="nav_announcement">
+                <a href="{% url "announcements_list" %}">{% trans "Announcements" %}</a>
+              </li>
+          <li>
+               <a href="{% url "profile_browse" %}">{% trans "People" %}</a>
+          </li>
+
+          {% block extra_tab %}
+
+          {% endblock %}
+
+          {% endblock %}
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+            {% block my_extra_right_tab %}
+
+
+           {% endblock my_extra_right_tab %}
+
+            <li>
+              <div class="search">
+                <form id="search" action="{% url "search" %}" >
+                  <span class="fa fa-search"></span>
+                  {% if HAYSTACK_SEARCH %}
+                  <input id="search_input" type="text" placeholder="{% trans 'Search' %}" name="q">
+                  {% else %}
+                  <input id="search_input" type="text" placeholder="{% trans 'Search' %}" name="title__icontains">
+                  {% endif %}
+                </form>
+              </div>
+          </li>
+            {% if not user.is_authenticated and ACCOUNT_OPEN_SIGNUP %}
+            <li><a href="{% url "account_signup" %}">{% trans "Register" %}</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li>
+              <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                {% autoescape off %}
+                    {% avatar user 42 %}
+                {% endautoescape %}
+                {% with full_name=user.first_name|add:' '|add:user.last_name %}
+                  {% if full_name.strip %}
+                    {{ full_name | truncatechars:20 }}
+                  {% else %}
+                    {{ user.username | truncatechars:20 }}
+                  {% endif %}
+                {% endwith %}
+                <i class="fa fa-angle-down fa-lg"></i>
+              </a>
+              </li>
+          {% else %}
+          <li><a href="#" data-toggle="modal" data-target="#SigninModal" role="button" >{% trans "Sign in" %} </a></li>
+              {% endif %}
+            </ul>
+          </div> <!--/.nav-collapse -->
+        </div>
+      </nav>
+      <!-- End of Navbar -->

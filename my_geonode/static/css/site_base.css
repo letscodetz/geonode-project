@@ -33,3 +33,6 @@ body{
 .home .jumbotron p {
     font-weight: bold;
 }
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #31708f9c;
+}
