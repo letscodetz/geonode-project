@@ -44,7 +44,59 @@ body{
 .navbar-inverse .navbar-nav > li > a:hover {
     background-color: #31708f9c;
 }
+
+/*arrow css*/
 .arrow_image > img{
 align-content: center;
-    margin-left: 50em;
+    margin-left: 54em;
+}
+
+.arrow_image > .container {
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+
+.arrow_image > .container h3, .arrow_image > .container p {
+    line-height: 1.5em;
+}
+/*dataset css*/
+.datasets{
+    position: relative;
+    background: url(../img/Background-Blue.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-shadow: none;
+    height: 770px;
+    text-align: center;
+}
+.datasets > iframe{
+        margin-top: 60px;
+
+}
+
+/*showcase*/
+
+.layers, .docs, .maps{
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+
+}
+.layers p, .docs p, .maps p {
+    padding: 15px;
+}
+
+/*footer*/
+.footer{
+    background: #ffffff;
+}
+.footer_img {
+  width: 50%;
+}
+.footer_img1{
+    width: 100%;
+}
+.footer_img, .footer_img1{
+       margin: 55px 0 55px 60px;
 }

@@ -24,5 +24,28 @@ This is where you can override the hero area block. You can simply modify the co
 {% block bigsearch %}
 <div class="arrow_image">
 <img src="static/img/arrows.png">
+    <div class="container">
+
+<h3>Resilience Academy's mission is to equip young people with tools, knowledge and skills to address the world's most pressing urban challenges and ensure resilience urban development</h3>
+<p>As an initiative for Tanzania Urban Resilience Program(TURP) and the Government of Tanzania, the Resilience
+    Academy is implemented through a collaborative approach involving dedicated faculty in from universities; Ardhi University(Tanzania),
+    State University(Zanzibar), Sokoine University of Agriculture(Tanzania), University of Dar es salaam(Tanzania), University of Turku(Finland)
+</p>
+    </div>
 </div>
 {% endblock bigsearch %}
+
+{% block datasets %}
+<div class="datasets">
+<iframe width="1220" height="650" src="https://www.youtube.com/embed/_yo8_6Jri4k">
+</iframe>
+</div>
+{% endblock datasets %}
+
+{% block showcase %}
+    {% include 'showcase.html' %}
+
+{% endblock showcase %}
+  {% block footer %}
+      {% include 'footer.html' %}
+{% endblock footer %}
