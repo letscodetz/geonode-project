@@ -21,18 +21,30 @@ body{
 
 .home .jumbotron{
     position: relative;
-    background: url(../img/MikocheniDrainage-1.png);
+    background: url(../img/homapage.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     color: #fff;
     text-shadow: none;
-    height: 500px;
+    height: 650px;
+    text-align: center;
 
+}
+.jumbotron h1{
+    font-size: 40px;
+    padding-top: 220px;
 }
 .home .jumbotron p {
     font-weight: bold;
+    font-style: italic!important;
+    font-size: 30px!important;
+    color: #059ace;
 }
 .navbar-inverse .navbar-nav > li > a:hover {
     background-color: #31708f9c;
+}
+.arrow_image > img{
+align-content: center;
+    margin-left: 50em;
 }
