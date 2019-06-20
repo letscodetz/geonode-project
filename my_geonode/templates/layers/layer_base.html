@@ -2,6 +2,9 @@
 {% load i18n %}
 
 {% block title %} {{ block.super }} {% endblock %}
+{% block header %}
+    {% include 'navigation.html' %}
+{% endblock header %}
 
 {% block body_class %}{% trans "data" %}{% endblock body_class %}
 
