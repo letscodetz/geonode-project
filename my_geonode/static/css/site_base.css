@@ -2,7 +2,7 @@
 body{
     overflow-x: hidden;
 }
-.home .navbar-inverse {
+.home .navbar-inverse, .navbar-inverse {
     background-color: #04a2db;
 }
 .navbar-brand {

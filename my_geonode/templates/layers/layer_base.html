@@ -1,6 +1,8 @@
 {% extends "geonode_base.html" %}
 {% load i18n %}
-
+{% block extra_head %}
+      <link href="{{ STATIC_URL }}css/site_base.css" rel="stylesheet"/>
+{% endblock %}
 {% block title %} {{ block.super }} {% endblock %}
 {% block header %}
     {% include 'navigation.html' %}
